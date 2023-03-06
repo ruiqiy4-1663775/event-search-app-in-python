@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="/static/my.css">
+<script src="/static/app.js"></script>
+<title>hw6</title>
+</head>
+<body>
+    <div class="div1">
+        <div class="form-title">
+            <h1 class="title">Events Search</h1>
+            <hr>
+        </div>
+        <form id="form">
+          <div class="form-group">
+            <label for="keyword" class="formWord">Keyword</label>
+            <input type="text" id="keyword" class="long_input_box" required>
+          </div>
+          <div class="form-group form-group-row">
+              <div class="form-group-half">
+              <label for="distance" class="formWord">Distance (miles)</label>
+              <input type="number" id="distance" placeholder="10">
+            </div>
+            <div class="form-group-half">
+              <label for="category" class="formWord">Category</label>
+              <select id="category" required>
+                <option value="Default">Default</option>
+                <option value="Music">Music</option>
+                <option value="Sports">Sports</option>
+                <option value="Arts">Arts</option>
+                <option value="Theatre">Theatre</option>
+                <option value="Film">Film</option>
+                <option value="Miscellaneous">Miscellaneous</option>
+              </select>
+            </div>
+          </div>
+          <div class="location formWord">
+            Location
+            <input type="checkbox" id="auto_location">
+            <span style="color: white;">Auto-Detect Location</span>
+          </div>
+          <div class="form-group" id="location_div">
+            <br>
+            <input type="text" id="location" class="long_input_box" required>
+          </div>
+          <div class="div_buttons">
+            <button class="search-btn" type="button" onclick="search(); document.getElementById('form').reportValidity()">SEARCH</button>
+            <button class="clear-btn" type="button" onclick="clearAll()">CLEAR</button>
+          </div>
+        </form>
+      </div>
+    
+    <div id="result_div">
+        <div id="noRecords">
+
+        </div>
+        <table id="resultTable">
+            <thead id="searchResultHead">
+             
+            </thead>
+            <tbody id="searchResult">
+
+            </tbody>
+        </table> 
+    </div>
+    <div id="detail_div">
+      <h1 id = "name" style="color:white; text-align: center;"></h1>
+      <div id = "box">
+        <div id="text_info"></div>
+        <div id = "seatMap"></div>
+      </div>
+    </div>
+    <div id = "venue_outer" style="display: none;">
+      <div id = "venue_inner">
+        <p id = "nameV" style="color:black; font-size: 30px; margin-top: 10px; margin-bottom: 10px;">hello</p>
+        <hr id = "line" style="width: 180px;">
+        <div id = "lower_venue" style="display : flex; flex-direction : row;">
+          <div class = "venue" style="border-right: solid;">
+            <div style="display : flex; flex-direction : row; height: 100px">
+              <div class="address" style="font-weight: bold; text-align: right;">
+                Address:
+              </div>
+              <div id ="address" class = "address" style="text-align: left; padding-left: 20px;">
+                dfasf
+              </div>
+            </div>
+            <a id = "map" target="_blank" style="color: rgb(43, 109, 242);">Open in Google Maps</a>
+          </div>
+          <div class = "venue">
+            <a id = "more" target="_blank" style="color: rgb(43, 109, 242); margin-top: 20%;">More events at this venue</a>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+</html>
